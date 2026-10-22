@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Página web personal de Rebeca Mary Astacio Bryan, estudiante de Programación WEB en el ITLA.">
-  <title>Rebeca Astacio | Mi página personal</title>
+  <meta name="description" content="Rebeca Mary Astacio Bryan: quién soy, cómo contactarme, mis pasatiempos y un video que recomiendo.">
+  <title>¡Hola! Soy Rebeca Astacio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@500;600;700&display=swap">
@@ -13,97 +13,96 @@
 <body>
   <div class="lienzo">
 
-    <!-- Barra lateral: identidad, contacto y redes -->
+    <!-- Tarjeta degradada: quién soy y cómo encontrarme -->
     <aside class="perfil">
-      <figure class="perfil__marco">
-        <img class="perfil__foto" src="https://github.com/Rebe2501.png" alt="Foto de perfil de Rebeca Mary Astacio Bryan" width="180" height="180">
-      </figure>
+      <img class="perfil__foto" src="https://avatars.githubusercontent.com/u/233872653?v=4&amp;s=320" alt="Avatar de Rebeca: un perrito trabajando frente a la computadora" width="150" height="150">
 
       <h1 class="perfil__nombre">
         <span class="perfil__nombres">Rebeca Mary</span>
         <span class="perfil__apellidos">Astacio Bryan</span>
       </h1>
-      <p class="perfil__rol">Estudiante de Programación WEB – ITLA</p>
-      <p class="perfil__matricula">Matrícula: 2025-2264</p>
+      <p class="perfil__rol">Estudiante del ITLA 💻</p>
+      <p class="perfil__matricula"><span>matrícula</span> 2025-2264</p>
 
       <section class="bloque-lateral" aria-labelledby="titulo-contacto">
-        <h2 id="titulo-contacto" class="bloque-lateral__titulo">Contacto</h2>
-        <dl class="datos">
-          <div class="datos__fila">
-            <dt>📞 Teléfono</dt>
-            <dd><a href="tel:+18006547485">800-654-7485</a></dd>
-          </div>
-          <div class="datos__fila">
-            <dt>📍 Dirección</dt>
-            <dd>Santo Domingo, RD</dd>
-          </div>
-          <div class="datos__fila">
-            <dt>📧 Correo</dt>
-            <dd><a href="mailto:rebeca1234@outlook.com">rebeca1234@outlook.com</a></dd>
-          </div>
-        </dl>
+        <h2 id="titulo-contacto" class="bloque-lateral__titulo">Contáctame</h2>
+        <ul class="datos">
+          <li class="datos__fila">
+            <span class="datos__icono" aria-hidden="true">✉️</span>
+            <span><small>Correo electrónico</small> <a href="mailto:rebeca1234@outlook.com">rebeca1234@outlook.com</a></span>
+          </li>
+          <li class="datos__fila">
+            <span class="datos__icono" aria-hidden="true">📱</span>
+            <span><small>Celular</small> <a href="tel:+18006547485">800-654-7485</a></span>
+          </li>
+          <li class="datos__fila">
+            <span class="datos__icono" aria-hidden="true">🏠</span>
+            <span><small>Dirección</small> Santo Domingo, RD</span>
+          </li>
+        </ul>
       </section>
 
       <section class="bloque-lateral" aria-labelledby="titulo-redes">
-        <h2 id="titulo-redes" class="bloque-lateral__titulo">Mis redes</h2>
-        <ul class="enlaces-sociales">
-          <li><a class="pildora" href="https://github.com/Rebe2501" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-        </ul>
+        <h2 id="titulo-redes" class="bloque-lateral__titulo">Encuéntrame en</h2>
+        <a class="red-social" href="https://github.com/Rebe2501" target="_blank" rel="noopener noreferrer">
+          <span><strong>GitHub</strong> <small>@Rebe2501</small></span>
+          <span aria-hidden="true">↗</span>
+        </a>
       </section>
     </aside>
 
-    <!-- Columna principal: presentación, hobbies y video -->
+    <!-- Hoja blanca: presentación, video y pasatiempos -->
     <main class="contenido">
-      <section class="panel" aria-labelledby="titulo-sobre-mi">
-        <h2 id="titulo-sobre-mi" class="panel__titulo">Sobre mí</h2>
-        <p>
-          ¡Hola! Soy Rebeca, estudiante del Instituto Tecnológico de Las Américas (ITLA).
-          Me encanta aprender a crear páginas web y descubrir cómo se construyen las cosas
-          que usamos todos los días en internet. Esta es mi página personal para la
-          asignatura de Programación WEB.
-        </p>
-      </section>
+      <div class="hoja">
+        <section class="tema" aria-labelledby="titulo-sobre-mi">
+          <h2 id="titulo-sobre-mi" class="tema__titulo">Sobre mí</h2>
+          <p>
+            ¡Hola! Soy Rebeca, estudiante del Instituto Tecnológico de Las Américas (ITLA).
+            Me encanta aprender a crear páginas web y descubrir cómo se construyen las cosas
+            que usamos todos los días en internet. Esta es mi página personal para la
+            asignatura de Programación WEB.
+          </p>
+        </section>
 
-      <section class="panel" aria-labelledby="titulo-hobbies">
-        <h2 id="titulo-hobbies" class="panel__titulo">Mis hobbies</h2>
-        <div class="rejilla-hobbies">
-          <article class="hobby">
-            <span class="hobby__icono" aria-hidden="true">💻</span>
-            <h3 class="hobby__nombre">Programar</h3>
-            <p class="hobby__texto">Crear proyectos y resolver problemas con código.</p>
-          </article>
-          <article class="hobby">
-            <span class="hobby__icono" aria-hidden="true">📚</span>
-            <h3 class="hobby__nombre">Leer</h3>
-            <p class="hobby__texto">Perderme entre las páginas de un buen libro.</p>
-          </article>
-          <article class="hobby">
-            <span class="hobby__icono" aria-hidden="true">🎧</span>
-            <h3 class="hobby__nombre">Escuchar música</h3>
-            <p class="hobby__texto">Siempre con una canción de fondo.</p>
-          </article>
-          <article class="hobby">
-            <span class="hobby__icono" aria-hidden="true">😴</span>
-            <h3 class="hobby__nombre">Dormir</h3>
-            <p class="hobby__texto">Recargar energías después de un día largo.</p>
-          </article>
-        </div>
-      </section>
+        <section class="tema" aria-labelledby="titulo-video">
+          <h2 id="titulo-video" class="tema__titulo">Te recomiendo este video</h2>
+          <iframe class="reproductor"
+                  src="https://www.youtube-nocookie.com/embed/0FwTn7pLOkI"
+                  title="SASHA SIX, THE BEGINNING | Little Nightmares Part 1 – CoryxKenshin"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+        </section>
 
-      <section class="panel" aria-labelledby="titulo-video">
-        <h2 id="titulo-video" class="panel__titulo">Un video que me gusta</h2>
-        <iframe class="reproductor"
-                src="https://www.youtube.com/embed/0FwTn7pLOkI"
-                title="Video de YouTube favorito de Rebeca"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen></iframe>
-      </section>
+        <section class="tema" aria-labelledby="titulo-pasatiempos">
+          <h2 id="titulo-pasatiempos" class="tema__titulo">Pasatiempos</h2>
+          <div class="rejilla-hobbies">
+            <article class="hobby">
+              <span class="hobby__icono" aria-hidden="true">🎧</span>
+              <h3 class="hobby__nombre">Escuchar música</h3>
+              <p class="hobby__texto">Siempre con una canción de fondo.</p>
+            </article>
+            <article class="hobby">
+              <span class="hobby__icono" aria-hidden="true">📚</span>
+              <h3 class="hobby__nombre">Leer</h3>
+              <p class="hobby__texto">Perderme entre las páginas de un buen libro.</p>
+            </article>
+            <article class="hobby">
+              <span class="hobby__icono" aria-hidden="true">😴</span>
+              <h3 class="hobby__nombre">Dormir</h3>
+              <p class="hobby__texto">Recargar energías después de un día largo.</p>
+            </article>
+            <article class="hobby">
+              <span class="hobby__icono" aria-hidden="true">💻</span>
+              <h3 class="hobby__nombre">Programar</h3>
+              <p class="hobby__texto">Crear proyectos y resolver problemas con código.</p>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <footer class="pie">Rebeca Mary Astacio Bryan · página hecha a mano con HTML y CSS 💜</footer>
     </main>
   </div>
-
-  <footer class="pie">
-    Hecho con 💜 por Rebeca Mary Astacio Bryan · Programación WEB – ITLA · 2026
-  </footer>
 </body>
 </html>

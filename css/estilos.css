@@ -6,9 +6,11 @@
   --tinta: #2d1b4e;
   --borde: #e9d5ff;
   --blanco: #ffffff;
-  --radio: 16px;
+  --radio: 20px;
   --sombra: 0 10px 30px rgba(124, 58, 237, 0.12);
   --degradado: linear-gradient(135deg, var(--violeta), var(--rosa));
+  /* tonos más oscuros para que el texto blanco se lea bien sobre la tarjeta */
+  --degradado-tarjeta: linear-gradient(160deg, #6d28d9 0%, #9333ea 55%, #be185d 100%);
 }
 
 *,
@@ -33,66 +35,46 @@ h3 {
   line-height: 1.25;
 }
 
-a {
-  color: var(--violeta);
-}
-
-/* ===== Distribución en dos columnas ===== */
+/* ===== Tarjeta degradada a un lado, hoja blanca al otro ===== */
 .lienzo {
   display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 28px;
-  max-width: 1120px;
+  grid-template-columns: 300px 1fr;
+  gap: 32px;
+  max-width: 1140px;
   margin: 0 auto;
-  padding: 32px 24px;
+  padding: 36px 24px;
   align-items: start;
 }
 
-/* ===== Barra lateral ===== */
+/* ===== Tarjeta de perfil ===== */
 .perfil {
   position: sticky;
   top: 24px;
-  background: var(--blanco);
-  border: 1px solid var(--borde);
+  background: var(--degradado-tarjeta);
+  color: var(--blanco);
   border-radius: var(--radio);
-  box-shadow: var(--sombra);
-  padding: 28px 24px;
-  text-align: center;
-  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(109, 40, 217, 0.28);
+  padding: 32px 26px;
 }
 
-/* franja decorativa superior */
-.perfil::before {
-  content: "";
-  display: block;
-  height: 90px;
-  margin: -28px -24px -70px;
-  background: var(--degradado);
-}
-
-.perfil__marco {
-  margin: 0 auto 16px;
-  width: 140px;
-  height: 140px;
-  padding: 5px;
-  border-radius: 28px;
-  background: var(--blanco);
-  box-shadow: var(--sombra);
-  position: relative;
+.perfil a {
+  color: var(--blanco);
 }
 
 .perfil__foto {
   display: block;
-  width: 100%;
-  height: 100%;
-  border-radius: 24px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
-  background: var(--borde);
+  border-radius: 34px;
+  border: 4px solid rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.25);
+  transform: rotate(-4deg);
 }
 
 .perfil__nombre {
-  margin: 0;
-  font-size: 1.55rem;
+  margin: 22px 0 0;
+  font-size: 1.6rem;
 }
 
 .perfil__nombres,
@@ -101,168 +83,140 @@ a {
 }
 
 .perfil__apellidos {
-  background: var(--degradado);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  font-weight: 500;
+  color: #fbcfe8;
 }
 
 .perfil__rol {
-  margin: 8px 0 4px;
+  margin: 6px 0 12px;
   font-weight: 600;
 }
 
 .perfil__matricula {
-  display: inline-block;
-  margin: 0 0 8px;
-  padding: 2px 14px;
-  border-radius: 999px;
-  background: var(--fondo);
-  border: 1px solid var(--borde);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 3px 12px 3px 3px;
+  border-radius: 8px;
+  background: var(--blanco);
   color: var(--violeta);
   font-weight: 700;
   font-size: 0.9rem;
 }
 
+.perfil__matricula span {
+  padding: 1px 8px;
+  border-radius: 6px;
+  background: #fce7f3;
+  color: #be185d;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
 .bloque-lateral {
-  margin-top: 22px;
-  padding-top: 18px;
-  border-top: 1px dashed var(--borde);
-  text-align: left;
+  margin-top: 26px;
 }
 
 .bloque-lateral__titulo {
   margin: 0 0 12px;
-  font-size: 1rem;
-  color: var(--violeta);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-size: 1.05rem;
+  font-weight: 600;
 }
 
 .datos {
-  margin: 0;
-}
-
-.datos__fila {
-  margin-bottom: 10px;
-}
-
-.datos dt {
-  font-size: 0.8rem;
-  font-weight: 700;
-  opacity: 0.75;
-}
-
-.datos dd {
-  margin: 0;
-  overflow-wrap: anywhere;
-}
-
-.enlaces-sociales {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 12px;
 }
 
-.pildora {
-  display: block;
-  padding: 9px 12px;
-  border-radius: 999px;
-  background: var(--degradado);
-  color: var(--blanco);
-  text-align: center;
-  text-decoration: none;
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-size: 0.9rem;
-  box-shadow: 0 6px 16px rgba(236, 72, 153, 0.25);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.pildora:hover,
-.pildora:focus-visible {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(124, 58, 237, 0.3);
-}
-
-/* ===== Columna principal ===== */
-.contenido {
+.datos__fila {
   display: flex;
-  flex-direction: column;
-  gap: 24px;
+  align-items: center;
+  gap: 12px;
+  overflow-wrap: anywhere;
+}
+
+.datos__icono {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.datos small,
+.red-social small {
+  display: block;
+  font-size: 0.78rem;
+  opacity: 0.85;
+}
+
+.red-social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: background 0.2s;
+}
+
+.red-social strong {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+}
+
+.red-social:hover,
+.red-social:focus-visible {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ===== Hoja de contenido ===== */
+.contenido {
   min-width: 0;
 }
 
-.panel {
+.hoja {
   background: var(--blanco);
-  border: 1px solid var(--borde);
   border-radius: var(--radio);
   box-shadow: var(--sombra);
-  padding: 26px 28px;
+  padding: 8px 36px;
 }
 
-.panel__titulo {
-  margin: 0 0 14px;
-  font-size: 1.35rem;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.tema {
+  padding: 28px 0;
 }
 
-/* pequeña barra de color antes de cada título */
-.panel__titulo::before {
+.tema + .tema {
+  border-top: 2px dotted var(--borde);
+}
+
+.tema__titulo {
+  margin: 0 0 16px;
+  font-size: 1.4rem;
+}
+
+/* subrayado corto con el degradado de la página */
+.tema__titulo::after {
   content: "";
-  width: 6px;
-  height: 1.2em;
-  border-radius: 6px;
+  display: block;
+  width: 48px;
+  height: 4px;
+  margin-top: 8px;
+  border-radius: 4px;
   background: var(--degradado);
 }
 
-.panel p {
+.tema p {
   margin: 0;
-}
-
-.rejilla-hobbies {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-}
-
-.hobby {
-  background: var(--fondo);
-  border: 1px solid var(--borde);
-  border-radius: var(--radio);
-  padding: 18px 16px;
-  text-align: center;
-  transition: transform 0.2s;
-}
-
-.hobby:hover {
-  transform: translateY(-4px);
-}
-
-.hobby__icono {
-  display: inline-grid;
-  place-items: center;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: var(--blanco);
-  box-shadow: var(--sombra);
-  font-size: 1.7rem;
-}
-
-.hobby__nombre {
-  margin: 12px 0 4px;
-  font-size: 1.05rem;
-  color: var(--violeta);
-}
-
-.hobby__texto {
-  font-size: 0.92rem;
 }
 
 .reproductor {
@@ -270,41 +224,84 @@ a {
   width: 100%;
   aspect-ratio: 16 / 9;
   border: 0;
-  border-radius: 12px;
+  border-radius: 14px;
   background: var(--tinta);
 }
 
-/* ===== Pie de página ===== */
-.pie {
+.rejilla-hobbies {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.hobby {
+  background: var(--fondo);
+  border-radius: 14px;
+  border-bottom: 4px solid var(--rosa);
+  padding: 16px 12px;
   text-align: center;
-  padding: 8px 16px 32px;
-  font-size: 0.9rem;
+}
+
+.hobby__icono {
+  font-size: 2rem;
+}
+
+.hobby__nombre {
+  margin: 6px 0 4px;
+  font-size: 1rem;
+  color: var(--violeta);
+}
+
+.hobby__texto {
+  font-size: 0.88rem;
+}
+
+.pie {
+  margin-top: 14px;
+  text-align: right;
+  font-size: 0.88rem;
   opacity: 0.8;
 }
 
-/* ===== Móvil y tablet: todo en una columna ===== */
+/* ===== Pantallas medianas: hobbies en 2 columnas ===== */
+@media (max-width: 1100px) {
+  .rejilla-hobbies {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===== Móvil y tablet: tarjeta arriba, hoja debajo ===== */
 @media (max-width: 860px) {
   .lienzo {
     grid-template-columns: 1fr;
-    padding: 20px 16px;
-    gap: 20px;
+    padding: 18px 14px;
+    gap: 18px;
   }
 
   .perfil {
     position: static;
+    padding: 26px 20px;
   }
 
-  .panel {
-    padding: 22px 18px;
+  .hoja {
+    padding: 4px 18px;
+  }
+
+  .tema {
+    padding: 22px 0;
+  }
+
+  .pie {
+    text-align: center;
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 400px) {
   .rejilla-hobbies {
-    gap: 12px;
+    gap: 10px;
   }
 
   .hobby {
-    padding: 14px 10px;
+    padding: 12px 8px;
   }
 }
